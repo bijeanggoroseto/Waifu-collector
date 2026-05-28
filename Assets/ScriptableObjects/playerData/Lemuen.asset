@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da5859430e63d64ebf240f88ea4e41f, type: 3}
+  m_Name: Lemuen
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+  playerPortrait: {fileID: 2924766875233398578, guid: 90e4c13380c57f84babafc351d9b41d5, type: 3}
+  weaponPortrait: {fileID: -7627819191866995224, guid: 7b5365f573066c746bc6e9aaf219e7ce, type: 3}
+  playerName: Lemuen
+  weaponName: AWP

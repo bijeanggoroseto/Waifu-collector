@@ -1,0 +1,27 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/styles.uss?fileID=7433441132597879392&amp;guid=0cf822f52788ffe48879ea069f67defb&amp;type=3#styles"/>
+    <ui:VisualElement name="equipSlot" data-source="project://database/Assets/UI%20Toolkit/playerData/Lappland.asset?fileID=11400000&amp;guid=cd2188bba14136f48be85ce0967956e3&amp;type=2#Lappland" class="container" style="flex-grow: 1; position: absolute; height: 133px; width: 133px; top: auto; left: 40px; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; bottom: 28px; align-self: flex-start; justify-content: center;">
+        <ui:VisualElement name="equipProfile" style="flex-grow: 1; position: absolute; height: 108px; width: 108px; top: 12px; left: 12px; background-color: rgb(255, 249, 249); right: auto; bottom: auto; aspect-ratio: 1;">
+            <Bindings>
+                <ui:DataBinding property="style.backgroundImage" data-source-path="weaponPortrait" binding-mode="ToTarget"/>
+            </Bindings>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="charaInfo" data-source="project://database/Assets/UI%20Toolkit/playerData/Lappland.asset?fileID=11400000&amp;guid=cd2188bba14136f48be85ce0967956e3&amp;type=2#Lappland" class="container" style="flex-grow: 1; position: absolute; height: 133px; width: 420px; top: 34px; left: 24px; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
+        <ui:VisualElement name="charaProfile" style="flex-grow: 1; position: absolute; height: 110px; width: 110px; top: 12px; left: 15px; background-color: rgb(255, 249, 249);">
+            <Bindings>
+                <ui:DataBinding property="style.backgroundImage" data-source-path="playerPortrait" binding-mode="ToTarget"/>
+            </Bindings>
+        </ui:VisualElement>
+        <ui:Label text="Label" name="charaName" style="background-position-x: center; background-color: rgba(0, 31, 53, 0); color: rgb(255, 255, 255); font-size: 38px; margin-left: 151px; margin-top: 7px;">
+            <Bindings>
+                <ui:DataBinding property="text" data-source-path="playerName" binding-mode="ToTarget"/>
+            </Bindings>
+        </ui:Label>
+        <ui:Label text="Label" name="charaEquipName" style="background-position-x: center; background-color: rgba(0, 31, 53, 0); color: rgb(255, 255, 255); font-size: 38px; margin-left: 151px; margin-top: 7px; height: 14px; width: 235px;">
+            <Bindings>
+                <ui:DataBinding property="text" data-source-path="weaponName" binding-mode="ToTarget"/>
+            </Bindings>
+        </ui:Label>
+    </ui:VisualElement>
+</ui:UXML>

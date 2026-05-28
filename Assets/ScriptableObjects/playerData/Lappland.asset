@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da5859430e63d64ebf240f88ea4e41f, type: 3}
+  m_Name: Lappland
+  m_EditorClassIdentifier: Assembly-CSharp::NewScriptableObjectScript
+  playerPortrait: {fileID: 2611778208580252482, guid: afe54b1aef6e7ca4f9d632ce923658a1, type: 3}
+  weaponPortrait: {fileID: -1040517612477081797, guid: 8b20ec082be8a0345988ea30b07555be, type: 3}
+  playerName: Lappland
+  weaponName: Twin Blades
