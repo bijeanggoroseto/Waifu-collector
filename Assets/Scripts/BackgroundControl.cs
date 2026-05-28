@@ -13,11 +13,9 @@ public class BackgroundControl : MonoBehaviour
         length = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        float distance = mainCam.transform.position.x * parallaxEffect;
-        float movement = mainCam.transform.position.x * (1 - parallaxEffect);
-        transform.position = new Vector3(startPos + distance, transform.position.y, transform.position.z);
+        float movement = mainCam.transform.position.x * (1 - parallaxEffect); 
         if(movement > startPos + length)
         {
             startPos += length;
@@ -26,5 +24,11 @@ public class BackgroundControl : MonoBehaviour
         {
             startPos -= length;
         }
+    }
+
+    private void FixedUpdate()
+    {
+        float distance = mainCam.transform.position.x * parallaxEffect;
+        transform.position = new Vector3(startPos + distance, transform.position.y, transform.position.z);
     }
 }

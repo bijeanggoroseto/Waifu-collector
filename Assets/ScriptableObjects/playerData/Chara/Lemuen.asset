@@ -9,10 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9da5859430e63d64ebf240f88ea4e41f, type: 3}
+  m_Script: {fileID: 11500000, guid: b68130d1840d6be49b0f978b1a364bb6, type: 3}
   m_Name: Lemuen
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+  m_EditorClassIdentifier: Assembly-CSharp::AttackForm
   playerPortrait: {fileID: 2924766875233398578, guid: 90e4c13380c57f84babafc351d9b41d5, type: 3}
   weaponPortrait: {fileID: -7627819191866995224, guid: 7b5365f573066c746bc6e9aaf219e7ce, type: 3}
+  inGameSprite: {fileID: -799888612153011316, guid: ba79ec5986a066a48a20ffca2c18ffe7, type: 3}
   playerName: Lemuen
   weaponName: AWP
+  moveSpeed: 10
+  jumpForce: 12
+  spawnOffset: 10
+  cooldown: 0
+  projectile: {fileID: 3324642467246771992, guid: c6ca095a1e619a641945d72ab0d1d46e, type: 3}

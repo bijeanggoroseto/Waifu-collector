@@ -9,10 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9da5859430e63d64ebf240f88ea4e41f, type: 3}
+  m_Script: {fileID: 11500000, guid: b68130d1840d6be49b0f978b1a364bb6, type: 3}
   m_Name: Texas
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+  m_EditorClassIdentifier: Assembly-CSharp::AttackForm
   playerPortrait: {fileID: 8428176173947817069, guid: 2cb48a586aed6984697f95fcb4b8263c, type: 3}
   weaponPortrait: {fileID: -1718143621378268232, guid: a86606d77cd42a54cbdbc348df7ad4c5, type: 3}
+  inGameSprite: {fileID: -4308045771546994962, guid: 6750ad3387ac4c54aa28642a55018dee, type: 3}
   playerName: Texas
-  weaponName: Dual Swords
+  weaponName: Dual Blades
+  moveSpeed: 16
+  jumpForce: 15
+  spawnOffset: 0
+  cooldown: 0
+  projectile: {fileID: 3324642467246771992, guid: 83a8157cf01eebf4d8a619bf730cd969, type: 3}

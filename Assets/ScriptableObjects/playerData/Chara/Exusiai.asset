@@ -9,10 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9da5859430e63d64ebf240f88ea4e41f, type: 3}
+  m_Script: {fileID: 11500000, guid: b68130d1840d6be49b0f978b1a364bb6, type: 3}
   m_Name: Exusiai
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+  m_EditorClassIdentifier: Assembly-CSharp::AttackForm
   playerPortrait: {fileID: 572799759648097618, guid: 6a723c39660ada64e80890038cf46049, type: 3}
   weaponPortrait: {fileID: 3829385418354023952, guid: 6026598a6fa01d64c9845f9ca5b33364, type: 3}
+  inGameSprite: {fileID: 5464700143728462602, guid: 5603a1dff2c2cc043988e8ad60282434, type: 3}
   playerName: Exusiai
   weaponName: Vector
+  moveSpeed: 12
+  jumpForce: 12
+  spawnOffset: 10
+  cooldown: 0
+  projectile: {fileID: 3324642467246771992, guid: c6ca095a1e619a641945d72ab0d1d46e, type: 3}

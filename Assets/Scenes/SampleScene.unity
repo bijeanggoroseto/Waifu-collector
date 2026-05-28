@@ -316,6 +316,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 93bd7c97-ab4f-4a7d-b3ff-e4a18a823519
     m_ActionName: 'player/ChangeChara[/Keyboard/q]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7659ce52-d0bf-4dcd-a7d1-e52e4fdbe7c6
+    m_ActionName: 'player/Attack[/Mouse/leftButton]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: player
@@ -336,9 +340,9 @@ MonoBehaviour:
   uiDocument: {fileID: 229007911}
   playerData:
   - {fileID: 11400000, guid: cd2188bba14136f48be85ce0967956e3, type: 2}
-  - {fileID: 11400000, guid: 771d578f4b7bfe244b2064cbdf395d85, type: 2}
-  - {fileID: 11400000, guid: db5ecf8a6add12546b83b38d5355b2c7, type: 2}
-  - {fileID: 11400000, guid: 4f8280b42cfdd5b4daa00c069fa0d971, type: 2}
+  - {fileID: 11400000, guid: 843fcd60dd62f7547b687cc9b76f39fb, type: 2}
+  - {fileID: 11400000, guid: 37d5b8e0df298314c8d044198654e8b7, type: 2}
+  - {fileID: 11400000, guid: 865c3a2fe1b6e8141b713aef2efa506e, type: 2}
   input: {fileID: 1272492602}
 --- !u!1 &271205208
 GameObject:
@@ -891,7 +895,6 @@ GameObject:
   - component: {fileID: 575319791}
   - component: {fileID: 575319790}
   - component: {fileID: 575319789}
-  - component: {fileID: 575319793}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -1046,20 +1049,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &575319793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575319788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5f129792d995134d94bc9ef844a322a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BackgroundControl
-  mainCam: {fileID: 0}
-  parallaxEffect: 0
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,7 +1145,7 @@ GameObject:
   - component: {fileID: 823492738}
   - component: {fileID: 823492737}
   m_Layer: 0
-  m_Name: AttackPoint
+  m_Name: AttackRotation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1171,7 +1160,7 @@ Transform:
   m_GameObject: {fileID: 823492735}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 8, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1189,11 +1178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d51ab7dbd368b4486d0828a29c1753, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  currentForm:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  maincam: {fileID: 519420031}
+  charaData: []
   input: {fileID: 1272492602}
 --- !u!61 &823492738
 BoxCollider2D:
@@ -1202,7 +1188,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 823492735}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -1232,10 +1218,10 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.2, y: 0.2}
+    newSize: {x: 0.2, y: 0.2}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
@@ -1724,6 +1710,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 93bd7c97-ab4f-4a7d-b3ff-e4a18a823519
     m_ActionName: 'player/ChangeChara[/Keyboard/q]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1272492602}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: attackInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7659ce52-d0bf-4dcd-a7d1-e52e4fdbe7c6
+    m_ActionName: 'player/Attack[/Mouse/leftButton]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: player
@@ -2180,6 +2182,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 93bd7c97-ab4f-4a7d-b3ff-e4a18a823519
     m_ActionName: 'player/ChangeChara[/Keyboard/q]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7659ce52-d0bf-4dcd-a7d1-e52e4fdbe7c6
+    m_ActionName: 'player/Attack[/Mouse/leftButton]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: player
@@ -2197,13 +2203,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68272e00d685a1b47aac77f8a042e3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  jumpForce: 14
-  moveSpeed: 20
-  charaSprite:
-  - {fileID: -8325534414434704778, guid: 975b75e58d8425349bc078ab8167a0ba, type: 3}
-  - {fileID: 5464700143728462602, guid: 5603a1dff2c2cc043988e8ad60282434, type: 3}
-  - {fileID: -799888612153011316, guid: ba79ec5986a066a48a20ffca2c18ffe7, type: 3}
-  - {fileID: -4308045771546994962, guid: 6750ad3387ac4c54aa28642a55018dee, type: 3}
+  charaData:
+  - {fileID: 11400000, guid: cd2188bba14136f48be85ce0967956e3, type: 2}
+  - {fileID: 11400000, guid: 843fcd60dd62f7547b687cc9b76f39fb, type: 2}
+  - {fileID: 11400000, guid: 37d5b8e0df298314c8d044198654e8b7, type: 2}
+  - {fileID: 11400000, guid: 865c3a2fe1b6e8141b713aef2efa506e, type: 2}
   input: {fileID: 1272492602}
 --- !u!1 &1990643426
 GameObject:

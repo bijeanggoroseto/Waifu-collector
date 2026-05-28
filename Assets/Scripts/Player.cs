@@ -8,13 +8,16 @@ public class Player : MonoBehaviour
     private float moveDirection;
     private Rigidbody2D rb;
     private SpriteRenderer playerSprite;
-    [SerializeField] private float jumpForce, moveSpeed;
-    [SerializeField] private Sprite[] charaSprite;
+    private float jumpForce, moveSpeed;
+    public PlayerData[] charaData;
     [SerializeField] private InputManager input;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         playerSprite = GetComponent<SpriteRenderer>();
+        playerSprite.sprite = charaData[0].inGameSprite;
+        moveSpeed = charaData[0].moveSpeed;
+        jumpForce = charaData[0].jumpForce;
     }
     private void Start()
     {
@@ -31,7 +34,9 @@ public class Player : MonoBehaviour
 
     public void changeSprite(int index)
     {
-        playerSprite.sprite = charaSprite[index];
+        playerSprite.sprite = charaData[index].inGameSprite;
+        moveSpeed = charaData[index].moveSpeed;
+        jumpForce = charaData[index].jumpForce;
     }
 
     public void Move(InputAction.CallbackContext context)
